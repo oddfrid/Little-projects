@@ -19,7 +19,7 @@
 body {
     font-family: 'Muli', sans-serif;
     font-size: 18px;
-    max-width: 1600px;
+    // max-width: 1600px;
     margin: auto;
 }
 h1 {
@@ -63,7 +63,7 @@ a {
     position: fixed;
     width: 100%;
     height: 150px;
-
+    overflow-y: hidden;
     z-index: 2;
     background: var(--white);
     padding: 55px 190px;
@@ -74,6 +74,7 @@ a {
     grid-template-columns: 175px 550px;
     place-content: space-between;
     align-items: center;
+    max-width: 1600px;
 }
 .logo {
     font-weight: bold;
@@ -121,7 +122,8 @@ a {
 }
 // main
 main {
-    margin-top: 150px;
+    max-width: 1600px;
+    margin: 150px auto 0;
 }
 // section 1
 .virtual-heathcare::before {
@@ -154,24 +156,13 @@ main {
 
 .our-services {
 max-width: 1150px;
-margin: 0 auto;
+margin: auto;
 }
 .our-services-info {
         padding: 0 100px;
         text-align: center;
-        position: relative;
         h2 {
             margin-bottom: 80px;
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 56px;
-            height: 2px;
-            background: var(--h-regular);
         }
 		&__p {
             color: var(--p-regular-color);
@@ -184,7 +175,7 @@ margin: 0 auto;
     grid-template-rows: 354px 354px;
     grid-gap: 15px 15px;
     place-content: space-between;
-    margin-bottom: 72px;
+    padding: 0px 30px 72px;
 }
 .our-services-card {
         border-radius: 20px;
@@ -317,29 +308,57 @@ margin: 0 auto;
 
 //articles
 .articles {
+    padding: 0 200px 200px;
 }
 .article {
-
-		&__p {
-            font-size: 16px;
-		}
-
-		&__link {
-            font-weight: 600;
-            color: var(--blue);
-		}
+        h2 {
+            text-align: center;
+            margin-bottom: 120px;
+        }
+        .figcaption {
+            padding: 30px 50px 40px 30px;
+            display: grid;
+            grid-template-rows: 2fr auto 1fr;
+            grid-gap: 30px;
+            h3 {
+                font-size: 21px;
+                line-height: 28px;
+            }
+            .article__p {
+                font-size: 18px;
+                color: var(--p-regular-color);
+                line-height: 28px;
+            }
+    
+            .article__link {
+                font-weight: 600;
+                color: var(--blue);
+                img {
+                    margin-left: 10px;
+                }
+            }
+        }
 }
 .articles-cards {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    padding: 0 30px 70px;
 }
 .articles-card {
     box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
     border-radius: 20px;
+    max-width: 350px;
+
 }
 .articles-btn {
+    display: flex;
+    justify-content: center;
 }
 
 //footer
 .footer {
+    width: 100%;
     height: 432px;
     background: var(--linear-footer);
     color: var(--white);
@@ -351,11 +370,17 @@ margin: 0 auto;
         font-weight: 200;
     }
 }
+.footer::after {
+    content: '';
+    background: url(../img/dots-footer.svg) left bottom;
+}
 .footer-wrap {
+    max-width: 1600px;
     padding: 115px 235px 130px 190px;
     display: grid;
     grid-template-columns: repeat(4, max-content);
     place-content: space-between;
+    margin: 0 auto;
 
 }
 .trafalgar {
