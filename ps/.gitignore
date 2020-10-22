@@ -1,0 +1,23 @@
+# object files, dependency files, library files, binaries
+obj/
+*.o
+*.d
+*.a
+*.out
+checker
+push_swap
+
+# CLion
+.idea/
+cmake-build-debug/
+CMakeLists.txt
+
+# macOS
+.DS_Store
+
+# valgrind
+*.dSYM/
+*.out.*
+
+# checker
+test.sh
